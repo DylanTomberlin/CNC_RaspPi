@@ -24,7 +24,7 @@ int main(void){
 	myMotor.pins = motorPins;
 	myMotor.stepsPerRev = 200;
 	
-	/*
+
 	setUpPins(myMotor);
 	
 	while(1 == 1){
@@ -37,6 +37,6 @@ int main(void){
 		step4(myMotor);
 		delay(DELAY);
 	}
-	*/
+	
 	return 0;
 }

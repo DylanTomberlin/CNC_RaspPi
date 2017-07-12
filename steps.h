@@ -5,16 +5,15 @@
  * 	  Date: 7/10/17
  */
  
-#ifndef STEPS_H
-#define STEPS_H
+#ifndef STEPSH
+#define STEPSH
  
  
-typedef struct {
+typedef struct{
 	int stepsPerRev;
 	float travelPerRev;
-	int pins[4];
-} Motor;
-
+	int *pins;
+}Motor;
 
 void setUpPins(Motor currentMotor);
 

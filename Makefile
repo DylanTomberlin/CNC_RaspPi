@@ -1,5 +1,5 @@
 CC = gcc
-FILES = main.c steps.c
+FILES = main.c steps.c steps.h
 OUT_EXE = out_executable
 
 build: $(FILES)
