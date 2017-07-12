@@ -11,37 +11,39 @@
  */
 #include <wiringPi.h>
 
-void setUpPins(int pins[]){
+#include "steps.h"
+
+void setUpPins(Motor currentMotor){
 	int i = 0;
 	for(i = 0; i < 4; i++){
-		pinMode(pins[i], OUTPUT);
+		pinMode(currentMotor.pins[i], OUTPUT);
 	}
 }
 
-void step1(int pins[]){
-	digitalWrite(pins[0], LOW);
-	digitalWrite(pins[1], HIGH);   
-	digitalWrite(pins[2], HIGH);   
-	digitalWrite(pins[3], LOW); 
+void step1(Motor currentMotor){
+	digitalWrite(currentMotor.pins[0], LOW);
+	digitalWrite(currentMotor.pins[1], HIGH);   
+	digitalWrite(currentMotor.pins[2], HIGH);   
+	digitalWrite(currentMotor.pins[3], LOW); 
 }
 
-void step2(int pins[]){
-	digitalWrite(pins[0], LOW);   
-	digitalWrite(pins[1], HIGH);   
-	digitalWrite(pins[2], LOW);   
-	digitalWrite(pins[3], HIGH); 
+void step2(Motor currentMotor){
+	digitalWrite(currentMotor.pins[0], LOW);   
+	digitalWrite(currentMotor.pins[1], HIGH);   
+	digitalWrite(currentMotor.pins[2], LOW);   
+	digitalWrite(currentMotor.pins[3], HIGH); 
 }
 
-void step3(int pins[]){
-	digitalWrite(pins[0], HIGH);   
-	digitalWrite(pins[1], LOW);   
-	digitalWrite(pins[2], LOW);   
-	digitalWrite(pins[3], HIGH); 
+void step3(Motor currentMotor){
+	digitalWrite(currentMotor.pins[0], HIGH);   
+	digitalWrite(currentMotor.pins[1], LOW);   
+	digitalWrite(currentMotor.pins[2], LOW);   
+	digitalWrite(currentMotor.pins[3], HIGH); 
 }
 
-void step4(int pins[]){
-	digitalWrite(pins[0], HIGH);
-	digitalWrite(pins[1], LOW);
-	digitalWrite(pins[2], HIGH);
-	digitalWrite(pins[3], LOW);
+void step4(Motor currentMotor){
+	digitalWrite(currentMotor.pins[0], HIGH);
+	digitalWrite(currentMotor.pins[1], LOW);
+	digitalWrite(currentMotor.pins[2], HIGH);
+	digitalWrite(currentMotor.pins[3], LOW);
 }

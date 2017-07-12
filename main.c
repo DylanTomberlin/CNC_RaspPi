@@ -14,21 +14,29 @@
 #define DELAY 25
 
 int main(void){
-	int motorPins[4] = {8, 9, 7, 15};
-	int i = 0;
-	char myChar;
-	
 	wiringPiSetup();
-	setUpPins(motorPins);
+	int motorPins[4] = {8, 9, 7, 15};
+	
+	//Motor myMotor = {.stepsPerRev = 200, .pins = {8, 9, 7, 15}};
+	//setUpPins(myMotor.pins);
+	
+	Motor myMotor;
+	myMotor.pins = motorPins;
+	myMotor.stepsPerRev = 200;
+	
+	/*
+	setUpPins(myMotor);
+	
 	while(1 == 1){
-		step1(motorPins);
+		step1(myMotor);
 		delay(DELAY);
-		step2(motorPins);
+		step2(myMotor);
 		delay(DELAY);
-		step3(motorPins);
+		step3(myMotor);
 		delay(DELAY);
-		step4(motorPins);
+		step4(myMotor);
 		delay(DELAY);
 	}
+	*/
 	return 0;
 }

@@ -4,10 +4,23 @@
  * 	Author: Dylan Tomberlin
  * 	  Date: 7/10/17
  */
+ 
+#ifndef STEPS_H
+#define STEPS_H
+ 
+ 
+typedef struct {
+	int stepsPerRev;
+	float travelPerRev;
+	int pins[4];
+} Motor;
 
-void setUpPins(int pins[]);
 
-void step1(int pins[]);
-void step2(int pins[]);
-void step3(int pins[]);
-void step4(int pins[]);
+void setUpPins(Motor currentMotor);
+
+void step1(Motor currentMotor);
+void step2(Motor currentMotor);
+void step3(Motor currentMotor);
+void step4(Motor currentMotor);
+
+#endif
