@@ -8,13 +8,17 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
-#include "steps.h"
+#include "motor.h"
+#include "MotorControls.h"
+#include "globals.h"
 
-#define STEPS_PER_REV 200
-#define DELAY 25
+#define DELAY 10
+
 
 int main(void){
 	wiringPiSetup();
+	char letter;
+	
 	int motorPins[4] = {8, 9, 7, 15};
 	
 	//Motor myMotor = {.stepsPerRev = 200, .pins = {8, 9, 7, 15}};
@@ -23,20 +27,33 @@ int main(void){
 	Motor myMotor;
 	myMotor.pins = motorPins;
 	myMotor.stepsPerRev = 200;
+	myMotor.currentStep = 0;
 	
 
-	setUpPins(myMotor);
+	setUpPins(&myMotor);
 	
-	while(1 == 1){
-		step1(myMotor);
-		delay(DELAY);
-		step2(myMotor);
-		delay(DELAY);
-		step3(myMotor);
-		delay(DELAY);
-		step4(myMotor);
+	double posX = 0;
+	double posY = 0;
+	double posZ = 0;
+	
+	
+	moveLine(2, 3, 4);
+	while(scanf("%c", &letter) > 0);
+	
+	int i = 0;
+	for (i = 0; i < 200; i++){
+		step(&myMotor, CW, &posX);
 		delay(DELAY);
 	}
+	for (i = 0; i < 200; i++){
+		step(&myMotor, CCW, &posX);
+		delay(DELAY);
+	}
+	
+	freeMotor(&myMotor);
+	
+	
+	while(scanf("%c", &letter) > 0);
 	
 	return 0;
 }
