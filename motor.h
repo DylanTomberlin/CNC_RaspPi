@@ -23,11 +23,4 @@ void setUpPins(Motor *currentMotor);
 void step(Motor *currentMotor, int direction, double *position);
 void freeMotor(Motor *currentMotor);
 
-void step1(Motor currentMotor);
-void step2(Motor currentMotor);
-void step3(Motor currentMotor);
-void step4(Motor currentMotor);
-
-void test(void);
-
 #endif

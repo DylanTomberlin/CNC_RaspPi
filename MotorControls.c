@@ -9,9 +9,14 @@
 
 #include "motor.h"
 #include "globals.h"
+#include "MotorControls.h"
 
 void moveLine(double newX, double newY, double newZ){
-	//double totalDistance = sqrt((posX-newX)(posX-newX) + (posY-newY)(posY-newY) + (posZ-newZ)(posZ-newZ));
-	double testVar = sqrt(49);
-	//printf("%f", posX);
+	double totalDistance = sqrt((posX - newX)*(posX - newX) + (posY - newY)*(posY - newY) + (posZ - newZ)*(posZ - newZ));
+	double travelTime = feedRate / totalDistance;
+	
+}
+
+int transToStep(double distance, double travelPerStep){
+	return distance / travelPerStep;
 }
