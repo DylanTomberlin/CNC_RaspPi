@@ -10,3 +10,4 @@ void printArray(int *myArray, int size);
 void wait(void);
 void oneRev(Motor *currentMotor, int delay);
 void speedTest(Motor *currentMotor);
+void speedTest2(Motor *currentMotor);

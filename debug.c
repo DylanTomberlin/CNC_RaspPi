@@ -56,3 +56,23 @@ void speedTest(Motor *currentMotor){
 	}
 	*/
 }
+
+void speedTest2(Motor *currentMotor){
+	int pause = 10;
+	printf("Enter 0 for commands or enter delay in MICROseconds: ");
+	while(scanf("%d", &pause) > 0){
+		if(pause == 0){
+			printf("Press 0 for commands\nPress -1 to free motor\nPress -2 to step CW\nPress -3 to step CCW\n");
+		}else if(pause == -1){
+			freeMotor(currentMotor);
+		}else if(pause == -2){
+			step(currentMotor, CW, &posX);
+		}else if(pause == -3){
+			step(currentMotor, CCW, &posX);
+		}else{
+			oneRev(currentMotor, pause);
+		}
+		printf("Enter a command or delay in MICROseconds: ");
+	}
+}
+

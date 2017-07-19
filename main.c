@@ -20,6 +20,8 @@
 	double posZ = 0;
 	
 	double feedRate = 4;
+	
+	enum Motors {MOTORX, MOTORY, MOTORZ};
 
 int main(void){
 	wiringPiSetup();
@@ -33,8 +35,14 @@ int main(void){
 	//step(&myMotor, CW, &posX);
 	//step(&myMotor, CW, &posX);
 	
-	speedTest(&myMotor);
+	//speedTest(&myMotor);
+	/*
+	int i = 10;
+	for(i = 10; i > 0; i--){
+		speedTest2(&myMotor, i);
+	}*/
 	
+	speedTest2(&myMotor);
 	
 	//moveLine(2, 3, 4);
 	//wait();

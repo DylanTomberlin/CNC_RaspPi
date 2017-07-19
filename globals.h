@@ -10,6 +10,10 @@
 #define STANDARD 0;
 #define METRIC 1;
 
+#define incrementDelay 2000//in MICROseconds
+
+extern enum Motors;
+
 extern double feedRate;
 extern double posX;
 extern double posY;
